@@ -1,4 +1,6 @@
 // import toast from 'react-hot-toast';
+import { TfiSearch } from 'react-icons/tfi';
+import PropTypes from 'prop-types';
 
 import {
   Header,
@@ -13,7 +15,9 @@ export const SearchBar = ({ onSubmit }) => {
     <Header className="searchbar">
       <Form className="form" onSubmit={onSubmit}>
         <SearchFormBtn type="submit" className="button">
-          <BtnLable className="button-label">Search</BtnLable>
+          <BtnLable className="button-label">
+            <TfiSearch />
+          </BtnLable>
         </SearchFormBtn>
 
         <Input
@@ -27,4 +31,8 @@ export const SearchBar = ({ onSubmit }) => {
       </Form>
     </Header>
   );
+};
+
+SearchBar.propTypes = {
+  onsubmit: PropTypes.func,
 };

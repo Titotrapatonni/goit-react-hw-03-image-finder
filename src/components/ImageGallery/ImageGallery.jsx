@@ -6,7 +6,7 @@ import { Component } from 'react';
 import { getFetchImages } from '../Services';
 import { Modal } from 'components/Modal/Modal';
 import { Gallery } from './ImageGallery.styled';
-
+import PropTypes from 'prop-types';
 export class ImageGallery extends Component {
   state = {
     images: [],
@@ -110,3 +110,9 @@ export class ImageGallery extends Component {
     );
   }
 }
+
+ImageGallery.propTypes = {
+  query: PropTypes.string.isRequired,
+  page: PropTypes.number.isRequired,
+  loadMore: PropTypes.func.isRequired,
+};

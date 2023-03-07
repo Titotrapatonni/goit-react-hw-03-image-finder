@@ -13,7 +13,10 @@ export class App extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({ value: e.currentTarget.elements.searchBar.value.trim() });
+    this.setState({
+      value: e.currentTarget.elements.searchBar.value.trim(),
+      page: 1,
+    });
   };
 
   handleLoadMore = () => {
