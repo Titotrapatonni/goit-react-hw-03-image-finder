@@ -1,12 +1,18 @@
 // import { Modal } from 'components/Modal/Modal';
 
+import { Image, Item } from './ImageGalleryItem.styled';
+
 export const ImageGalleryItem = ({
   image: { id, webformatURL, largeImageURL },
   onClick,
 }) => {
   return (
-    <li className="gallery-item" id={id} onClick={() => onClick(largeImageURL)}>
-      <img src={webformatURL} alt="img" />
-    </li>
+    <Item
+      className="gallery-item"
+      id={id}
+      onClick={() => onClick(largeImageURL)}
+    >
+      <Image src={webformatURL} alt="img" />
+    </Item>
   );
 };

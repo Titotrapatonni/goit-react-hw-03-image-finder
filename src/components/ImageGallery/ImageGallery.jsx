@@ -5,6 +5,7 @@ import { Loader } from 'components/Loader/Loader';
 import { Component } from 'react';
 import { getFetchImages } from '../Services';
 import { Modal } from 'components/Modal/Modal';
+import { Gallery } from './ImageGallery.styled';
 
 export class ImageGallery extends Component {
   state = {
@@ -82,7 +83,7 @@ export class ImageGallery extends Component {
   render() {
     return (
       <>
-        <ul className="gallery">
+        <Gallery className="gallery">
           {this.state.images.map(image => {
             return (
               <ImageGalleryItem
@@ -92,7 +93,7 @@ export class ImageGallery extends Component {
               />
             );
           })}
-        </ul>
+        </Gallery>
 
         {this.state.isLoading && <Loader />}
         {this.state.disableBtn && this.state.images.length % 12 === 0 && (
